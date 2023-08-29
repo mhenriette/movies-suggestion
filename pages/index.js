@@ -33,13 +33,24 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="container">
-        <h1 className={inter.className}>NextJS OpenAI Boilerplate</h1>
-        <p className={inter.className}> Test this boilerplate: Enter an animal and it will generate a pet name for you.
+        <h1 className={inter.className}>AI Film Suggestion</h1>
+        <p className={inter.className}>
+          Enter your favorite movie, and we will suggest you good movies with
+          similar story
         </p>
         <form>
-          <ResponseDisplay data={data} error={error} loading={loading} />
-          <TextInput value={inputValue} onChange={handleInputChange} placeholder={'Enter an animal'}/>
+          <TextInput
+            value={inputValue}
+            onChange={handleInputChange}
+            placeholder={"Enter the name of the movie"}
+          />
           <SubmitButton onClick={handleSubmit} disabled={loading} />
+          <ResponseDisplay
+            data={data}
+            error={error}
+            loading={loading}
+            movieName={inputValue}
+          />
         </form>
       </main>
     </>

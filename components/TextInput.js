@@ -7,6 +7,7 @@ const TextInput = ({ value, onChange, placeholder }) => {
       onChange={onChange}
       className="text-input"
       placeholder={placeholder}
+
     />
   );
 };

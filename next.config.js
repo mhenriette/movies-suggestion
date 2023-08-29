@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  image: {
+    domains: ["https://www.imdb.com"],
+  },
   reactStrictMode: true,
   env: {
     OPENAI_API_KEY: process.env.OPENAI_API_KEY,
