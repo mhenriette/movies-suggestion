@@ -1,6 +1,6 @@
-# Next.js OpenAI Boilerplate
+# MovieMuse
 
-This is a simplified yet effective Next.js boilerplate project that showcases how to integrate the OpenAI API within a Next.js application. The boilerplate incorporates a user-friendly interface for submitting prompts and rendering the response from the OpenAI API.
+This is the AI film suggestion which suggests you movies with similar story according to the movie name given
 
 ## Features
 
@@ -23,11 +23,11 @@ Ensure the following are installed on your machine:
 
 1.  Clone this repository:
 
-    `git clone https://github.com/your-username/nextjs-openai-boilerplate.git`
+    `git clone https://github.com/mhenriette/movies-suggestion.git`
 
 2.  Move to the project directory:
 
-    `cd nextjs-openai-boilerplate`
+    `cd movies-suggestion`
 
 3.  Install dependencies:
 
