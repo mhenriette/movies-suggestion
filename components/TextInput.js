@@ -1,5 +1,4 @@
-// file: /components/TextInput.js
-const TextInput = ({ value, onChange, placeholder }) => {
+const TextInput = ({ value, onChange, placeholder, handleKeyPress }) => {
   return (
     <input
       type="text"
@@ -7,7 +6,7 @@ const TextInput = ({ value, onChange, placeholder }) => {
       onChange={onChange}
       className="text-input"
       placeholder={placeholder}
-
+      onKeyPress={handleKeyPress}
     />
   );
 };

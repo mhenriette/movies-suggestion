@@ -1,5 +1,3 @@
-// file: /components/ResponseDisplay.js
-// import Image from "next/image";
 import Link from "next/link";
 const ResponseDisplay = ({ data, error, loading,movieName }) => {
   let content;

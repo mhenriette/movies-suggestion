@@ -5,19 +5,84 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
+.mainn{
+ 
+  background-image: url('../public/moviess.png'); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  width: 100%; 
+  height: 100vh;
+  /* opacity: 0.2; */
+  backdrop-filter: blur(2px);
+  overflow-y: scroll;
+}
+.navbar{
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem; /* Adjust the padding values as needed */
+    background-color: transparent;
+    background-color: black;
+    color: white;
+}
+.main_child{
+  /* background-color: black; */
+  width: 100%;
+  height: 110vh;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.text-input {
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
   width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  color: white;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.container::-webkit-scrollbar{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.container::-webkit-scrollbar-thumb{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.container::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.title{
+  font-size: 45px;
+  font-weight: 700;
+  color: rgb(206, 206, 15);
+  margin-bottom: 25px;
+}
+.title_paragraph{
+  font-weight: 400;
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+.text-input {
+  width: 60%;
   padding: 0.5rem;
   font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 40px;
+  padding: 20px;
+  outline: none;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  gap:30px;
+  justify-content: center;
+  align-items: center;
+  margin: 90px 0;
 }
 
 .submit-button {
@@ -66,12 +131,12 @@ body {
   font-style: italic;
 }
 .movieContainer{
-  background-color: #564c96;
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border-radius: 0.5rem; /* 8px */
   width: 600px;
   min-height: 200px;
-  padding: 10px;
+  padding: 10px 10px;
 }
 .imdb{
   color: inherit;
@@ -80,4 +145,66 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem;
+  }
+
+  .main_child {
+    height: auto;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .text-input {
+    width: 80%;
+    font-size: 0.9rem;
+  }
+
+  .movieContainer {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+/* Tablet and larger screens (styles for screens > 768px wide) */
+
+@media (min-width: 769px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .main_child {
+    height: 110vh;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 45px;
+  }
+
+  .text-input {
+    width: 60%;
+    font-size: 1rem;
+  }
+
+  .movieContainer {
+    width: 600px;
+    padding: 10px 10px;
+  }
 }
