@@ -10,7 +10,6 @@ const useApi = (url, method, payload) => {
     const fetchData = async () => {
       setLoading(true);
       try {
-
         const response = await fetch(url, {
           method,
           headers: {
@@ -21,19 +20,18 @@ const useApi = (url, method, payload) => {
 
         const result = await response.json();
         if (response.status !== 200) {
-
           throw (
             result.error ||
             new Error(`Request failed with status ${response.status}`)
           );
         }
 
-        setData(result); 
+        setData(result);
         setError(null);
       } catch (error) {
-        setError(error); 
+        setError(error);
       } finally {
-        setLoading(false); 
+        setLoading(false);
       }
     };
     if (payload) {
