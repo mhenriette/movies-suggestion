@@ -1,3 +1,5 @@
+![Alt text](image.png)
+
 # MovieMuse
 
 This is the AI film suggestion which suggests you movies with similar story according to the movie name given
