@@ -71,6 +71,12 @@ const completion = await openai.createChatCompletion({
 });
 ```
 
+### Live Demo
+[MovieMuse](https://fluffy-brioche-cdd209.netlify.app/)
+### ChatGPT conversation
+
+[ChatGPT conversation](https://chat.openai.com/share/81f74bc8-1155-4435-aedc-a332a147628b)
+
 ### Parameters
 
 > model: (string, required) - Indicates the name of the model to be utilized for generating completions. "gpt-3.5-turbo-0613" is used in this example, which is a chat-based language model.
