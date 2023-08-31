@@ -27,7 +27,6 @@ export default function Home() {
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
-      // handleSubmit(event);
     }
   };
 

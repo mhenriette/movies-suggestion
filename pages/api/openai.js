@@ -45,8 +45,9 @@ export default async function (req, res) {
 
     const resultContent = completion.data.choices[0].message.function_call.arguments;
     try {
-      console.log("Data from OpenAI API: ", resultContent);
-      const jsonResult = JSON.parse(resultContent);
+      // console.log("Data from OpenAI API: ", resultContent);
+      const cleanedContent = resultContent.replace(/[\r\n]+/g, "");
+      const jsonResult = JSON.parse(cleanedContent);
       res.status(200).json({ result: jsonResult });
     } catch (error) {
       res.status(500).json({ error: { message: "Failed to parse JSON response." } });
