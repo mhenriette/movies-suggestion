@@ -13,16 +13,16 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [inputValue, setInputValue] = useState("");
-  const [submitValue, setSubmitValue] = useState("");
-  const { data, error, loading } = useApi("/api/openai", "POST", submitValue);
+  const { data, error, loading, fetchData } = useApi();
 
   const handleInputChange = (event) => {
     event.preventDefault();
     setInputValue(event.target.value);
   };
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setSubmitValue(getUserPrompt(inputValue));
+    const submitValue = getUserPrompt(inputValue);
+    await fetchData("/api/openai", "POST", submitValue)
   };
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {

@@ -16,3 +16,4 @@ package-lock.json
 # generated file 
 projectCode.txt
 generated_comments.md
+.idea
