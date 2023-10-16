@@ -33,32 +33,32 @@ export default async function (req, res) {
     const functions = getFunctions();
     const messages = [systemMessage, userMessage];
 
-
     const completion = await openai.createChatCompletion({
-      "model": "gpt-3.5-turbo-0613",
-      "messages": messages,
-      "functions": functions,
+      model: "gpt-3.5-turbo-0613",
+      messages: messages,
+      functions: functions,
       temperature: 1,
       max_tokens: 510,
       top_p: 0,
     });
 
-    const resultContent = completion.data.choices[0].message.function_call.arguments;
+    const resultContent =
+      completion.data.choices[0].message.function_call.arguments;
     try {
-      // console.log("Data from OpenAI API: ", resultContent);
       const cleanedContent = resultContent.replace(/[\r\n]+/g, "");
       const jsonResult = JSON.parse(cleanedContent);
       res.status(200).json({ result: jsonResult });
     } catch (error) {
-      res.status(500).json({ error: { message: "Failed to parse JSON response." } });
+      res
+        .status(500)
+        .json({ error: { message: "Failed to parse JSON response." } });
     }
   } catch (error) {
-    if (error.response) {
-
-      console.error(error.response.status, error.response.data);
-      res.status(error.response.status).json(error.response.data);
+    if (error.response.statu === 401) {
+      res
+        .status(error.response.status)
+        .json({ error: { message: "Your Api Key is Invalid" } });
     } else {
-
       console.error(`Error with OpenAI API request: ${error.message}`);
       res.status(500).json({
         error: {
