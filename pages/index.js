@@ -2,10 +2,9 @@
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
 import { useState } from 'react';
-import TextInput from '@/components/TextInput';
-import SubmitButton from '@/components/SubmitButton';
-import ResponseDisplay from '@/components/ResponseDisplay';
-import useApi from '@/hooks/useApi';
+import TextInput from "@/components/TextInput";
+import ResponseDisplay from "@/components/ResponseDisplay";
+import useApi from "@/hooks/useApi";
 import { getUserPrompt } from "../prompts/promptUtils";
 import NavBar from "@/components/NavBar";
 
@@ -21,8 +20,12 @@ export default function Home() {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const submitValue = getUserPrompt(inputValue);
-    await fetchData("/api/openai", "POST", submitValue)
+    if (inputValue.trim().length) {
+      const submitValue = getUserPrompt(inputValue);
+      await fetchData("/api/openai", "POST", submitValue);
+      return;
+    }
+    alert("Please Enter a movie name");
   };
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
